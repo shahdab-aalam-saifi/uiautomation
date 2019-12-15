@@ -6,14 +6,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-public class GoogleSearchPage {
-	private WebDriver driver;
+import com.saalamsaifi.uiautomation.base.BasePage;
 
+public class GoogleSearchPage extends BasePage {
 	@FindBy(xpath = "//span[@class='Q8LRLc']")
 	private WebElement country;
 
 	public GoogleSearchPage(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 		PageFactory.initElements(this.driver, this);
 	}
 
