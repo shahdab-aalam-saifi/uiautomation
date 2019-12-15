@@ -1,11 +1,10 @@
-package com.saalamsaifi.uiautomation.base;
+package com.saalamsaifi.uiautomation;
 
 import java.util.Objects;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
 
 import com.saalamsaifi.uiautomation.driver.UIWebDriver;
 
@@ -14,12 +13,7 @@ public class BaseTest {
 
 	@BeforeSuite
 	public void setupSuite() {
-		this.driver = UIWebDriver.getDriver("chrome");
-	}
-
-	@Test
-	public void TC1_VerifyWebDriver() {
-
+		driver = UIWebDriver.getDriver("chrome");
 	}
 
 	@AfterSuite

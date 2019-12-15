@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite parallel="false" name="Suite">
-  <test name="Driver">
-    <classes>
-      <class name="com.saalamsaifi.uiautomation.GoogleSearchTest"/>
-    </classes>
-  </test>
-</suite>
