@@ -13,18 +13,26 @@ public class ExtentTestManager {
 		// private constructor
 	}
 
-	private static Map<Long, ExtentTest> extentTestMap = new HashMap<>();
+	private static Map<Long, ExtentTest> map = new HashMap<>();
 	private static ExtentReports extent = ExtentManager.getReporter();
 
+	/**
+	 * @return
+	 */
 	public static synchronized ExtentTest getTest() {
-		return extentTestMap.get(Thread.currentThread().getId());
+		return map.get(Thread.currentThread().getId());
 	}
 
+	/**
+	 * @param name
+	 * @param description
+	 * @return
+	 */
 	public static synchronized ExtentTest startTest(String name, String description) {
 		ExtentTest test = TextUtils.isBlank(description) ? extent.createTest(name)
 				: extent.createTest(name, description);
 
-		extentTestMap.put(Thread.currentThread().getId(), test);
+		map.put(Thread.currentThread().getId(), test);
 
 		return test;
 	}
